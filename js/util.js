@@ -145,7 +145,7 @@
     /*
     * Diretiva para transformar todos os textos dos inputs em UpperCase
     */
-   .directive('capitalize', function() {
+   .directive('upper', function() {
       return {
         require: 'ngModel',
         link: function(scope, element, attrs, modelCtrl) {

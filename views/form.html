@@ -6,8 +6,10 @@
  <div class="scrollable-content section">
    
   <form ng-submit='enviar()' >
-    <fieldset>
    
+    <fieldset>
+        <small class='required_notification'>* Campos obrigatórios</small>
+        
         <!--CPF -->
         <div class="form-group">
           <label>CPF</label>
@@ -33,10 +35,11 @@
         <!--Data Nascimento -->
         <div class="form-group">
           <label>Data Nascimento</label>
-          <input type="date"
+          <input type="text"
                  ng-model="lmto.dataNascimento"
                  class="form-control"
-                 required>
+                 required
+                 ui-date-mask>
         </div>
         <!--Fim Data Nascimento-->
        

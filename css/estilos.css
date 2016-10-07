@@ -37,3 +37,18 @@
 .blue {
     color: #0051a8;
 }
+
+input:required, textarea:required{
+    background: #fff url(images/red_asterisk.png) no-repeat center right 8px;
+}
+
+select:required{
+    background: #fff url(images/red_asterisk.png) no-repeat center right 20px;
+}
+
+.required_notification {
+    color:#d45252;
+    margin:5px 0 0 0;
+    display:inline;
+    float:right;
+}
