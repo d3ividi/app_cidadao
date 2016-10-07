@@ -1,0 +1,42 @@
+<div ui-content-for="title">
+  <span>Lançamentos</span>
+</div>
+
+<div class="scrollable" ng-controller="lancamentos">  
+  <div class="scrollable-content">
+      
+    <div class="list-group text-center">      
+        
+        <div class="list-group-item list-group-item-home"> 
+
+            <h4>Últimos Lançamentos</h4>
+            <hr>
+
+            <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <!-- Table -->
+              <table class="table">
+                  <tr>
+                      <th>Usuário</th>
+                      <th>Detalhes</th>
+                      <th>Valor</th>
+                  </tr>
+                  
+                    <tr ng-repeat="lan in resumo.lancamentos">
+                        
+                        <td>{{lan.usuario.split('@')[0]}}</td>
+                        <td>{{lan.detalhes}}</td>
+                        <td class="{{lan.tipoRegistro === 'Saída' ? 'red' : 'blue'}}"> {{lan.valor | currency}}</td>
+                        <td>
+                            <a href="#/form?codigo={{lan.codigo}}"><i class="fa fa-edit pull-right"></i></a>
+                        </td>
+                    </tr>
+                  
+              </table>
+            </div>
+
+        </div>
+        
+
+  </div>
+</div>

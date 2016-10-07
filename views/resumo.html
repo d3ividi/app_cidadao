@@ -1,0 +1,33 @@
+<div ui-content-for="title">
+  <span>Saldos</span>
+</div>
+
+<div class="scrollable" ng-controller="resumo">  
+  <div class="scrollable-content">
+      
+    <div class="list-group text-center">
+          
+    <div class="list-group-item list-group-item-home">  
+        <h4>Resumo Mensal</h4>
+        <hr/>
+        <div class="btn btn-primary fa fa-chevron-left btn-left" ng-click="updateMonth(false)"></div>
+
+        <div class="btn btn-center">
+            <h4>{{meses[data.getMonth()+1]}} - {{data.getFullYear()}}</h4>
+            <b>Entradas</b>
+            <p style="color: #007aff">{{resumo.entrada | currency}}</p>
+
+            <b>Saídas</b>
+            <p style="color: #d80b00">{{resumo.saida | currency}}</p>
+
+            <b>Saldo</b>
+            <p style="color:{{resumo.saldo < 0 ? '#d80b00' :'#007aff'}}">{{resumo.saldo | currency}}</p>
+
+        </div> 
+        
+        <div class="btn btn-primary fa fa-chevron-right btn-right" ng-click="updateMonth(true)"></div>
+
+  </div>       
+
+  </div>
+</div>

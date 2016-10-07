@@ -1,0 +1,191 @@
+<div ui-content-for="title">
+  <span>Formulário</span>
+</div>
+
+<div class="scrollable" ng-controller="formController">
+ <div class="scrollable-content section">
+   
+  <form ng-submit='enviar()' >
+    <fieldset>
+   
+        <!--CPF -->
+        <div class="form-group">
+          <label>CPF</label>
+          <input type="text"
+                 ng-model="lmto.cpf"
+                 class="form-control"
+                 ui-br-cpf-mask
+                 >
+        </div>
+        <!--Fim CPF-->
+        
+        <!--Nome COmpleto -->
+        <div class="form-group">
+          <label>Nome Completo</label>
+          <input type="text"
+                 ng-model="lmto.nomeCompleto"
+                 class="form-control"
+                 required
+                 upper>
+        </div>
+        <!--Fim Nome Completo-->
+        
+        <!--Data Nascimento -->
+        <div class="form-group">
+          <label>Data Nascimento</label>
+          <input type="date"
+                 ng-model="lmto.dataNascimento"
+                 class="form-control"
+                 required>
+        </div>
+        <!--Fim Data Nascimento-->
+       
+        <!--Estado Civil-->
+        <div class="form-group">
+          <label>Estado Civil</label>
+          <select name="estadoCivil"
+                  required
+                  ng-options="estadoCivil as estadoCivil for estadoCivil in params.estadoCivil"
+                  ng-model="lmto.estadoCivil"
+                  class="form-control">
+              <option value="">Selecione uma opção</option>
+              
+          </select>
+        </div>
+        <!--Fim Cidade-->
+        
+        <!--Profissão -->
+        <div class="form-group">
+          <label>Profissão</label>
+          <input type="text"
+                 ng-model="lmto.profissao"
+                 class="form-control"
+                 required
+                 upper>
+        </div>
+        <!--Fim Profissão-->
+        
+        <!--Telefone Principal -->
+        <div class="form-group">
+          <label>Telefone Principal</label>
+          <input type="text"
+                 ng-model="lmto.telefonePrincipal"
+                 class="form-control"
+                 ui-br-phone-number
+                 placeholder="(47) 9999-9999">
+        </div>
+        <!--Fim TelefoneP Principal-->
+        
+        <!--Telefone Alternativo -->
+        <div class="form-group">
+          <label>Telefone Alternativo</label>
+          <input type="text"
+                 ng-model="lmto.telefoneAlternativo"
+                 class="form-control"
+                 ui-br-phone-number
+                 placeholder="(47) 9999-9999">
+        </div>
+        <!--Fim TelefoneP Alternativo-->
+        
+        <!--E-mail -->
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email"
+                 ng-model="lmto.email"
+                 class="form-control"
+                 upper>
+        </div>
+        <!--Fim E-mail-->
+        
+        <!--CEP -->
+        <div class="form-group">
+          <label>CEP</label>
+          <input type="text"
+                 ng-model="lmto.cep"
+                 class="form-control"
+                 ui-br-cep-mask>
+        </div>
+        <!--Fim CEP-->
+        
+        <!--Endereço -->
+        <div class="form-group">
+          <label>Endereço</label>
+          <input type="text"
+                 ng-model="lmto.endereco"
+                 class="form-control"
+                 required
+                 upper>
+        </div>
+        <!--Fim Endereço-->
+        
+        <!--Número -->
+        <div class="form-group">
+          <label>Número</label>
+          <input type="text"
+                 ng-model="lmto.numero"
+                 class="form-control"
+                 >
+        </div>
+        <!--Fim Número-->
+        
+        <!--Bairro-->
+        <div class="form-group">
+          <label>Bairro</label>
+          <select name="bairro"
+                  required
+                  ng-options="bairro as bairro for bairro in params.bairros"
+                  ng-model="lmto.bairro"
+                  class="form-control">
+              <option value="">Selecione uma opção</option>
+              
+          </select>
+        </div>
+        <!--Fim Bairro-->
+        
+        <!--Complemento -->
+        <div class="form-group">
+          <label>Complemento</label>
+          <input type="text"
+                 ng-model="lmto.complemento"
+                 class="form-control"
+                 upper>
+        </div>
+        <!--Fim Complemento-->
+        
+        <!--Cidade-->
+        <div class="form-group">
+          <label>Cidade</label>
+          <select name="cidade"
+                  required
+                  ng-options="cidade as cidade for cidade in params.cidades"
+                  ng-model="lmto.cidade"
+                  class="form-control">
+              <option value="">Selecione uma opção</option>
+              
+          </select>
+        </div>
+        <!--Fim Cidade-->
+     
+        		
+        <hr>
+        <button class="btn btn-primary btn-block">
+            Enviar
+        </button>
+    </fieldset>
+    <hr>
+    <div class="{{transaction.status ? 'alert-success':'alert-danger'}} 
+       animated alert
+       {{transaction.message? 'fadeIn' : 'fadeOut'}}"
+       ng-show="transaction.message">
+        <i  class="btn btn-lg btn-primary pull-right btn-close" ng-click="transaction.message=null"><span class="fa fa-close"></span></i>
+        <p ng-bind-html="transaction.message"></p>
+            
+    </div>    
+
+<!--    <div ui-content-for="navbarAction">
+      <a class='btn' ng-click='login()'>Login</a>
+    </div>-->
+
+  </form>
+ </div>
+</div>

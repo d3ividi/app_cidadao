@@ -1,0 +1,39 @@
+/*
+* App
+*/
+.footer{
+    padding-top: 10px;
+}
+
+/*
+* Saldos
+*/
+.btn-left {
+    width: 10%;
+    min-width: 40px;
+}
+
+.btn-center {
+    width: 70%;
+    font-weight: bold;
+}
+
+.btn-right {
+    min-width: 40px;
+    width: 10%;
+}
+
+/*
+* Lançamentos
+*/
+.table{
+    text-align: left;
+}
+
+.red {
+    color: #d80b00 !important;
+}
+
+.blue {
+    color: #0051a8;
+}
