@@ -6,7 +6,7 @@ var app = angular.module('app', [
   'ngRoute',
   'mobile-angular-ui',
   'ui.utils.masks',
-  'mtl.googleSheet',
+  'google.apiSheet',
   'ngSanitize',
   'ui.bootstrap',
   'dialogs.main',
